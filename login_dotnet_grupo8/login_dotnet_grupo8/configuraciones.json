@@ -1,0 +1,13 @@
+{
+  "ConnectionStrings": {
+    "CadenaConexion": "Data Source=(local); Initial Catalog=SEGURIDAD;Integrated Security=true"
+  },
+
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "AllowedHosts": "*"
+}

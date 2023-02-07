@@ -1,0 +1,49 @@
+﻿@model IEnumerable<LOGIN_CRUD_GRUPO8.Models.Empleado>
+
+@{
+    ViewData["Title"] = "ListarEmpleados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Lista de Empleados
+    </div>
+    <div class="card-body">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Cédula</th>
+                    <th>Nombre</th>
+                    <th>Apellido paterno</th>
+                    <th>Apellido materno</th>
+                    <th>Fecha de nacimiento</th>
+                    <th>Estado</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.id</td>
+                        <td>@item.cedula</td>
+                        <td>@item.nombre</td>
+                        <td>@item.apellidoPaterno</td>
+                        <td>@item.apellidoMaterno</td>
+                        <td>@item.fechaNacimiento</td>
+                        <td>@item.estaActivo</td>
+                        <td>
+                            <a asp-action="Editar" asp-controller="Empleados" class="btn btn-primary btn-sm">Editar</a>
+                            <a asp-action="Eliminar" asp-controller="Empleados" class="btn btn-danger btn-sm">Eliminar</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>

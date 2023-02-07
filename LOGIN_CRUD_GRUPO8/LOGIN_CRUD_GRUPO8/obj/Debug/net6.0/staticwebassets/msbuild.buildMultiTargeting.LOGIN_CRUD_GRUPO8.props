@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\LOGIN_CRUD_GRUPO8.props" />
+</Project>

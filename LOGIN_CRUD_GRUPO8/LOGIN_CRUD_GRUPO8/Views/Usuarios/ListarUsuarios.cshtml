@@ -1,0 +1,45 @@
+﻿@model IEnumerable<LOGIN_CRUD_GRUPO8.Models.Usuario>
+@{
+    ViewData["Title"] = "ListarUsuarios";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Lista de Usuarios
+    </div>
+    <div class="card-body">
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Usuario</th>
+                    <th>Correo electrónico</th>
+                    <th>Fecha de creación</th>
+                    <th>Fecha de modificación</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.id</td>
+                        <td>@item.usuario</td>
+                        <td>@item.correo</td>
+                        <td>@item.fechaCreacion</td>
+                        <td>@item.fechaModificacion</td>
+                        <td>
+                            <a asp-action="EditarUsuario" asp-controller="Usuarios" class="btn btn-primary btn-sm" asp-route-idUsuario="@item.id" >Editar</a>
+                            <a asp-action="EliminarUsuario" asp-controller="Usuarios" class="btn btn-danger btn-sm" asp-route-idUsuario="@item.id" >Eliminar</a>
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
+

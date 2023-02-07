@@ -1,0 +1,90 @@
+﻿@model EmpleadoUsuario
+@{
+    ViewData["Title"] = "RegistrarUsuario";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>@ViewData["Title"] - Registrar Usuario</title>
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+        <link href="~/css/estilos.css" rel="stylesheet" />
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="logo">
+                <img class="logo-imagen" src="~/img/monster.jpg" alt="Logo de Monster" width="80" />
+            </div>
+
+            <h2>Registrarse</h2>
+
+            <form asp-action="RegistrarUsuario" asp-controller="InicioSesion" method="post">
+                <table>
+                    <tr>
+                        <td>
+                            <label class="form-label">ID</label>
+                            <input asp-for="id" type="text" class="form-control">
+                            <span asp-validation-for="id" class="text-danger"></span>
+                        </td>
+
+                        <td>
+                            <label class="form-label">Cédula</label>
+                            <input asp-for="cedula" type="text" class="form-control">
+                            <span asp-validation-for="cedula" class="text-danger"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label class="form-label">Nombre</label>
+                            <input asp-for="nombre" type="text" class="form-control">
+                            <span asp-validation-for="nombre" class="text-danger"></span>
+                        </td>
+
+                        <td>
+                            <label class="form-label">Apellido paterno</label>
+                            <input asp-for="apellidoPaterno" type="text" class="form-control">
+                            <span asp-validation-for="apellidoPaterno" class="text-danger"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label class="form-label">Apellido materno</label>
+                            <input asp-for="apellidoMaterno" type="text" class="form-control">
+                            <span asp-validation-for="apellidoMaterno" class="text-danger"></span>
+                        </td>
+
+                        <td>
+                            <label class="form-label">Nombre de usuario</label>
+                            <input asp-for="usuario" type="text" class="form-control">
+                            <span asp-validation-for="usuario" class="text-danger"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label class="form-label">Correo electrónico</label>
+                            <input asp-for="correo" type="text" class="form-control">
+                            <span asp-validation-for="correo" class="text-danger"></span>
+                        </td>
+                    </tr>
+                </table> 
+
+                <br/><br/>
+
+                <div class="botones">
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                    <a asp-action="IniciarSesion" asp-controller="InicioSesion" class="btn btn-warning">Volver</a>
+                </div>
+
+            </form>
+
+        </div>
+    </body>
+</html>
