@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\ElkinVera\Desktop\distribuidas-GR8-Login-DotNet\LOGIN_CRUD_GRUPO8\LOGIN_CRUD_GRUPO8
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/ElkinVera/Desktop/distribuidas-GR8-Login-DotNet/LOGIN_CRUD_GRUPO8/LOGIN_CRUD_GRUPO8/Views/Empleados/EditarEmpleado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXEVkaXRhckVtcGxlYWRvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElkinVera/Desktop/distribuidas-GR8-Login-DotNet/LOGIN_CRUD_GRUPO8/LOGIN_CRUD_GRUPO8/Views/Empleados/EliminarEmpleado.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXEVsaW1pbmFyRW1wbGVhZG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ElkinVera/Desktop/distribuidas-GR8-Login-DotNet/LOGIN_CRUD_GRUPO8/LOGIN_CRUD_GRUPO8/Views/Empleados/ListarEmpleados.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXExpc3RhckVtcGxlYWRvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

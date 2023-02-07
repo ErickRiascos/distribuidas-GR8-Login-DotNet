@@ -36,8 +36,8 @@
                         <td>@item.fechaNacimiento</td>
                         <td>@item.estaActivo</td>
                         <td>
-                            <a asp-action="Editar" asp-controller="Empleados" class="btn btn-primary btn-sm">Editar</a>
-                            <a asp-action="Eliminar" asp-controller="Empleados" class="btn btn-danger btn-sm">Eliminar</a>
+                            <a asp-action="EditarEmpleado" asp-controller="Empleados" class="btn btn-primary btn-sm" asp-route-id="@item.id" >Editar</a>
+                            <a asp-action="EliminarEmpleado" asp-controller="Empleados" class="btn btn-danger btn-sm" asp-route-id="@item.id" >Eliminar</a>
                         </td>
                     </tr>
 

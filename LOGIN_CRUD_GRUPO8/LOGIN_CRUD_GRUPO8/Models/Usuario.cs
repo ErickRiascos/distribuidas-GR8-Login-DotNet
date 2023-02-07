@@ -1,4 +1,5 @@
 ﻿using LOGIN_CRUD_GRUPO8.Datos;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.SqlClient;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
@@ -7,11 +8,17 @@ namespace LOGIN_CRUD_GRUPO8.Models
 {
     public class Usuario
     {
-        public string id { get; set; }
+        [Required(ErrorMessage = "El campo ID es obligatorio")]
+        public string idUsuario { get; set; }
+        [Required(ErrorMessage = "El campo Usuario es obligatorio")]
         public string usuario { get; set; }
+        [Required(ErrorMessage = "El campo Correo Electrónico es obligatorio")]
         public string correo { get; set; }
+        [Required(ErrorMessage = "El campo Contraseña es obligatorio")]
         public string clave { get; set; }
+        [Required(ErrorMessage = "El campo Fecha de Creación es obligatorio")]
         public DateTime fechaCreacion { get; set; }
+        [Required(ErrorMessage = "El campo Fecha de Modificación es obligatorio")]
         public DateTime fechaModificacion { get; set; }
         public int claveTemporal { get; set; }
 
@@ -37,9 +44,9 @@ namespace LOGIN_CRUD_GRUPO8.Models
             stringConexion = conn.getCadenaConexion();
         }
 
-        public Usuario(string id, string usuario, string correo, DateTime fechaCreacion, DateTime fechaModificacion)
+        public Usuario(string idUsuario, string usuario, string correo, DateTime fechaCreacion, DateTime fechaModificacion)
         {
-            this.id = id;
+            this.idUsuario = idUsuario;
             this.usuario = usuario;
             this.correo = correo;
             this.fechaCreacion = fechaCreacion;
@@ -66,7 +73,7 @@ namespace LOGIN_CRUD_GRUPO8.Models
                 {
                     listaUsuarios.Add(new Usuario()
                     {
-                        id = dr["EMP_ID"].ToString(),
+                        idUsuario = dr["EMP_ID"].ToString(),
                         usuario = dr["USUARIO"].ToString(),
                         correo = dr["CORREO"].ToString(),
                         fechaCreacion = Convert.ToDateTime(dr["USU_FECCRE"]),
@@ -119,18 +126,19 @@ namespace LOGIN_CRUD_GRUPO8.Models
             {
                 while (dr.Read())
                 {
-                    id = dr["EMP_ID"].ToString();
-                    usuario = dr["USUARIO"].ToString();
-                    correo = dr["CORREO"].ToString();
-                    fechaCreacion = Convert.ToDateTime(dr["USU_FECCRE"]);
-                    fechaModificacion = Convert.ToDateTime(dr["USU_FECMOD"]);
+                    usu.idUsuario = dr["EMP_ID"].ToString();
+                    usu.usuario = dr["USUARIO"].ToString();
+                    usu.correo = dr["CORREO"].ToString();
+                    usu.clave = dr["USU_PASWD"].ToString();
+                    usu.fechaCreacion = Convert.ToDateTime(dr["USU_FECCRE"]);
+                    usu.fechaModificacion = Convert.ToDateTime(dr["USU_FECMOD"]);
                 }
             }
 
             return usu;
         }
 
-        public bool editar()
+        public bool editar(Usuario usuario)
         {
             bool respuesta;
 
@@ -141,7 +149,34 @@ namespace LOGIN_CRUD_GRUPO8.Models
                 conexion.Open();
 
                 cmd.Connection = conexion;
-                cmd.CommandText = "UPDATE XESUBSE_USUARIO SET USUARIO = '" + usuario + "', CORREO = '" + correo + "', USU_PASWD = '" + clave + "' WHERE EMP_ID = '" + id +"'";
+
+                cmd.CommandText = "UPDATE XESUBSE_USUARIO SET USUARIO = '" + usuario.usuario + "', CORREO = '" + usuario.correo + "', USU_PASWD = '" + usuario.clave + "' WHERE EMP_ID = '" + usuario.idUsuario + "'";
+                cmd.ExecuteReader();
+
+                respuesta = true;
+            }
+            catch (Exception e)
+            {
+                string error = e.Message;
+                respuesta = false;
+            }
+
+            return respuesta;
+        }
+
+        public bool eliminar(string id)
+        {
+            bool respuesta;
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                SqlConnection conexion = new SqlConnection(stringConexion);
+                conexion.Open();
+
+                cmd.Connection = conexion;
+
+                cmd.CommandText = "DELETE FROM XESUBSE_USUARIO WHERE EMP_ID = '" + id + "'";
                 cmd.ExecuteReader();
 
                 respuesta = true;

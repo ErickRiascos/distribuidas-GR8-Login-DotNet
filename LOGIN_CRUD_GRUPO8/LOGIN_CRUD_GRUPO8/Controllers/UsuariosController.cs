@@ -1,5 +1,4 @@
-﻿using LOGIN_CRUD_GRUPO8.Datos;
-using LOGIN_CRUD_GRUPO8.Models;
+﻿using LOGIN_CRUD_GRUPO8.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LOGIN_CRUD_GRUPO8.Controllers
@@ -23,12 +22,12 @@ namespace LOGIN_CRUD_GRUPO8.Controllers
         }
 
         [HttpPost]
-        public IActionResult EditarUsuario(Usuario usuario)
+        public IActionResult EditarUsuario(Usuario usu)
         {
             if (!ModelState.IsValid)
                 return View();
 
-            var respuesta = usuario.editar();
+            var respuesta = usuario.editar(usu);
 
             if (respuesta)
                 return RedirectToAction("ListarUsuarios");

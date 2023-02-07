@@ -1,14 +1,22 @@
-﻿namespace LOGIN_CRUD_GRUPO8.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace LOGIN_CRUD_GRUPO8.Models
 {
     public class Empleado
     {
         /******* ATRIBUTOS con GETTERS y SETTERS *******/
 
+        [Required(ErrorMessage = "El campo ID es obligatorio")]
         public string id { get; set; }
+        [Required(ErrorMessage = "El campo Cédula es obligatorio")]
         public string cedula { get; set; }
+        [Required(ErrorMessage = "El campo Nombre es obligatorio")]
         public string nombre { get; set; }
+        [Required(ErrorMessage = "El campo Apellido Paterno es obligatorio")]
         public string apellidoPaterno { get; set; }
+        [Required(ErrorMessage = "El campo Apellido Materno es obligatorio")]
         public string apellidoMaterno { get; set; }
+        [Required(ErrorMessage = "El campo Fecha de Nacimiento es obligatorio")]
         public DateTime fechaNacimiento { get; set; }
         public int estaActivo { get; set; }
 
