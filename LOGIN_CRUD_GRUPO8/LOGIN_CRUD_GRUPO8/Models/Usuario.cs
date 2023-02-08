@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace LOGIN_CRUD_GRUPO8.Models
@@ -56,6 +57,23 @@ namespace LOGIN_CRUD_GRUPO8.Models
             stringConexion = conn.getCadenaConexion();
         }
 
+        public string generarClaveRandom()
+        {
+            string claveRandom = "";
+            int longitud = 8;
+
+            using (var crypto = new RNGCryptoServiceProvider())
+            {
+                var bits = (longitud * 6);
+                var byteSize = ((bits + 7) / 8);
+                var bytesArray = new byte[byteSize];
+                crypto.GetBytes(bytesArray);
+                claveRandom = Convert.ToBase64String(bytesArray);
+            }
+
+            return claveRandom;
+        }
+
         public List<Usuario> listar()
         {
             var listaUsuarios = new List<Usuario>();
@@ -85,32 +103,6 @@ namespace LOGIN_CRUD_GRUPO8.Models
             return listaUsuarios;
         }
 
-        public bool guardar(string id)
-        {
-            bool respuesta;
-
-            try
-            {
-                SqlCommand cmd = new SqlCommand();
-                SqlConnection conexion = new SqlConnection(stringConexion);
-                conexion.Open();
-
-                cmd.Connection = conexion;
-                cmd.CommandText = "INSERT INTO XESUBSE_USUARIO (EMP_ID, USUARIO, EST_CODIGO, CORREO, USU_PASWD, USU_FECCRE, USU_FECMOD, CLAVE_TEMPORAL) VALUES ('" + id + "', '" + usuario + "', '1', '" + correo + "', '" + clave + "', '10-10-2010', '29-7-2013', " + claveTemporal + ")";
-                cmd.ExecuteReader();
-
-                respuesta = true;
-
-            }
-            catch (Exception e)
-            {
-                string error = e.Message;
-                respuesta = false;
-            }
-
-            return respuesta;
-        }
-
         public Usuario buscar(string idUsuario)
         {
             Usuario usu = new Usuario();
@@ -138,7 +130,42 @@ namespace LOGIN_CRUD_GRUPO8.Models
             return usu;
         }
 
-        public bool editar(Usuario usuario)
+        public Usuario buscarPorUsuarioYClave(string usuario, string clave)
+        {
+            Usuario usu = new Usuario();
+
+            SqlCommand cmd = new SqlCommand();
+            SqlConnection conexion = new SqlConnection(stringConexion);
+            conexion.Open();
+
+            cmd.Connection = conexion;
+            cmd.CommandText = "SELECT * FROM XESUBSE_USUARIO WHERE USUARIO = '" + usuario + "'";
+
+            string contra = "";
+
+            using (var dr = cmd.ExecuteReader())
+            {
+                while (dr.Read())
+                {
+                    contra = dr["USU_PASWD"].ToString();
+
+                    if (BCrypt.Net.BCrypt.Verify(clave, contra))
+                    {
+                        usu.idUsuario = dr["EMP_ID"].ToString();
+                        usu.usuario = dr["USUARIO"].ToString();
+                        usu.correo = dr["CORREO"].ToString();
+                        usu.clave = dr["USU_PASWD"].ToString();
+                        usu.fechaCreacion = Convert.ToDateTime(dr["USU_FECCRE"]);
+                        usu.fechaModificacion = Convert.ToDateTime(dr["USU_FECMOD"]);
+                        usu.claveTemporal = Convert.ToInt32(dr["CLAVE_TEMPORAL"]);
+                    }
+                }
+            }
+
+            return usu;
+        }
+
+        public bool guardar(string id)
         {
             bool respuesta;
 
@@ -149,8 +176,70 @@ namespace LOGIN_CRUD_GRUPO8.Models
                 conexion.Open();
 
                 cmd.Connection = conexion;
+                cmd.CommandText = "INSERT INTO XESUBSE_USUARIO (EMP_ID, USUARIO, EST_CODIGO, CORREO, USU_PASWD, USU_FECCRE, USU_FECMOD, CLAVE_TEMPORAL) VALUES ('" + id + "', '" + usuario + "', '1', '" + correo + "', '" + clave + "', '10-10-2010', '29-7-2013', " + claveTemporal + ")";
+                cmd.ExecuteReader();
 
-                cmd.CommandText = "UPDATE XESUBSE_USUARIO SET USUARIO = '" + usuario.usuario + "', CORREO = '" + usuario.correo + "', USU_PASWD = '" + usuario.clave + "' WHERE EMP_ID = '" + usuario.idUsuario + "'";
+                respuesta = true;
+
+            }
+            catch (Exception e)
+            {
+                string error = e.Message;
+                respuesta = false;
+            }
+
+            return respuesta;
+        }
+
+        public bool editar(Usuario usuario)
+        {
+            bool respuesta;
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                SqlConnection conexion = new SqlConnection(stringConexion);
+                conexion.Open();
+
+                /***** ENCRIPTAR CONTRASEÑA *****/
+
+                usuario.clave = BCrypt.Net.BCrypt.HashPassword(usuario.clave);
+
+                /********************************/
+
+                cmd.Connection = conexion;
+                cmd.CommandText = "UPDATE XESUBSE_USUARIO SET USUARIO = '" + usuario.usuario + "', CORREO = '" + usuario.correo + "', USU_PASWD = '" + usuario.clave + "', CLAVE_TEMPORAL = 0 WHERE EMP_ID = '" + usuario.idUsuario + "'";
+                cmd.ExecuteReader();
+
+                respuesta = true;
+            }
+            catch (Exception e)
+            {
+                string error = e.Message;
+                respuesta = false;
+            }
+
+            return respuesta;
+        }
+
+        public bool editarClave(Usuario usuario)
+        {
+            bool respuesta;
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                SqlConnection conexion = new SqlConnection(stringConexion);
+                conexion.Open();
+
+                /***** ENCRIPTAR CONTRASEÑA *****/
+
+                usuario.clave = BCrypt.Net.BCrypt.HashPassword(usuario.clave);
+
+                /********************************/
+
+                cmd.Connection = conexion;
+                cmd.CommandText = "UPDATE XESUBSE_USUARIO SET USU_PASWD = '" + usuario.clave + "', CLAVE_TEMPORAL = 0 WHERE EMP_ID = '" + usuario.idUsuario + "'";
                 cmd.ExecuteReader();
 
                 respuesta = true;

@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "93Z+QIktAu0fCAd5hWmWSRmdX6PoM1RnM54MSnVkcfYM/1ivpb2Nh8xOBlrVuSEXKWBT+tOww0KTLSeOeTeDNw==",
+  "dgSpecHash": "1eUQewxDHbEJC5wT5qsXkkMiH2Q3kG6ibhXY+NP1mG4vB+EjX3jUGDd/DwijYu9rBMLAT1H0isEYbN1f61Rk+Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\ElkinVera\\Desktop\\distribuidas-GR8-Login-DotNet\\LOGIN_CRUD_GRUPO8\\LOGIN_CRUD_GRUPO8\\LOGIN_CRUD_GRUPO8.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\ElkinVera\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\ElkinVera\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ElkinVera\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\ElkinVera\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

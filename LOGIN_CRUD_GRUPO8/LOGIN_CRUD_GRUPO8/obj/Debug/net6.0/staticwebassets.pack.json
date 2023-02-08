@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\ElkinVera\\Desktop\\distribuidas-GR8-Login-DotNet\\LOGIN_CRUD_GRUPO8\\LOGIN_CRUD_GRUPO8\\wwwroot\\img\\perfil-de-usuario.webp",
+      "PackagePath": "staticwebassets\\img\\perfil-de-usuario.webp"
+    },
+    {
       "Id": "C:\\Users\\ElkinVera\\Desktop\\distribuidas-GR8-Login-DotNet\\LOGIN_CRUD_GRUPO8\\LOGIN_CRUD_GRUPO8\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

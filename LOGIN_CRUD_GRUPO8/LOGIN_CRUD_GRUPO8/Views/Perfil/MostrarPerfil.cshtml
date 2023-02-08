@@ -1,0 +1,64 @@
+﻿@model List<string>
+@{
+    ViewData["Title"] = "MostrarPerfil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card w-75 mx-auto">
+
+    <div class="card-header">
+        Perfil de Usuario
+    </div>
+
+    <div class="card-body">
+
+        <div class="logo">
+            <img class="logo-imagen" src="~/img/perfil-de-usuario.webp" alt="Logo de usuario" width="80" />
+        </div>
+
+        <br/>
+
+        <div class="mx-auto w-50">
+            <table>
+                <tr>
+                    <td>
+                        <label class="form-label">ID: @Model[0]</label>
+                    </td>
+
+                    <td>
+                        <label class="form-label">Cédula: @Model[1]</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label class="form-label">Nombre: @Model[2]</label>
+                    </td>
+
+                    <td>
+                        <label class="form-label">Apellido paterno: @Model[3]</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label class="form-label">Apellido materno: @Model[4]</label>
+                    </td>
+
+                    <td>
+                        <label class="form-label">Nombre de usuario: @Model[5]</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <label class="form-label">Correo electrónico: @Model[7]</label>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>
+
+</div>

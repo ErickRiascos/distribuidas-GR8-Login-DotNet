@@ -16,3 +16,12 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.logo {
+    width: max-content;
+    margin: 0 auto;
+}
+
+.logo-imagen {
+    margin: 0 auto;
+}

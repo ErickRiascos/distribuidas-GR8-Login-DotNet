@@ -16,14 +16,12 @@
             <input asp-for="id" type="hidden" class="form-control">
 
             <div class="alert alert-danger" role="alert">
-                ¿Desea eliminar el contacto : @Html.DisplayTextFor(m => m.nombre) ?
+                ¿Desea eliminar el empleado: @Html.DisplayTextFor(m => m.nombre) ?
             </div>
 
             <button type="submit" class="btn btn-danger">Eliminar</button>
             <a asp-action="ListarEmpleados" asp-controller="Empleados" class="btn btn-warning">Volver a la lista</a>
         </form>
-
-
     </div>
 </div>
 

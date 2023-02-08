@@ -14,14 +14,32 @@ namespace LOGIN_CRUD_GRUPO8.Controllers
         {
             var lista = datosEmpleado.listar();
 
-            return View(lista);
+            /***** COMPROBACIÓN SESIÓN ACTIVA *****/
+            if (HttpContext.Session.GetString("ID") != null)
+            {
+                return View(lista);
+            }
+            else
+            {
+                return RedirectToAction("IniciarSesion", "InicioSesion");
+            }
+            /**************************************/
         }
 
         public IActionResult EditarEmpleado(string id)
         {
             var empleado = datosEmpleado.buscar(id);
 
-            return View(empleado);
+            /***** COMPROBACIÓN SESIÓN ACTIVA *****/
+            if (HttpContext.Session.GetString("ID") != null)
+            {
+                return View(empleado);
+            }
+            else
+            {
+                return RedirectToAction("IniciarSesion", "InicioSesion");
+            }
+            /**************************************/
         }
 
         [HttpPost]
@@ -42,7 +60,16 @@ namespace LOGIN_CRUD_GRUPO8.Controllers
         {
             var empleado = datosEmpleado.buscar(id);
 
-            return View(empleado);
+            /***** COMPROBACIÓN SESIÓN ACTIVA *****/
+            if (HttpContext.Session.GetString("ID") != null)
+            {
+                return View(empleado);
+            }
+            else
+            {
+                return RedirectToAction("IniciarSesion", "InicioSesion");
+            }
+            /**************************************/
         }
 
         [HttpPost]

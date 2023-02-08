@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "OFwtNM1rY6qMIRzKhOezM2mti+zrOX9CMSx0H3/TwI0=",
+  "Hash": "umd4NtXaxDIRmXJqPBe1R3osRyPVk99Qk6abcGW0cpA=",
   "Source": "LOGIN_CRUD_GRUPO8",
   "BasePath": "_content/LOGIN_CRUD_GRUPO8",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\ElkinVera\\Desktop\\distribuidas-GR8-Login-DotNet\\LOGIN_CRUD_GRUPO8\\LOGIN_CRUD_GRUPO8\\wwwroot\\img\\perfil-de-usuario.webp",
+      "SourceId": "LOGIN_CRUD_GRUPO8",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\ElkinVera\\Desktop\\distribuidas-GR8-Login-DotNet\\LOGIN_CRUD_GRUPO8\\LOGIN_CRUD_GRUPO8\\wwwroot\\",
+      "BasePath": "_content/LOGIN_CRUD_GRUPO8",
+      "RelativePath": "img/perfil-de-usuario.webp",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\perfil-de-usuario.webp"
     },
     {
       "Identity": "C:\\Users\\ElkinVera\\Desktop\\distribuidas-GR8-Login-DotNet\\LOGIN_CRUD_GRUPO8\\LOGIN_CRUD_GRUPO8\\wwwroot\\js\\site.js",

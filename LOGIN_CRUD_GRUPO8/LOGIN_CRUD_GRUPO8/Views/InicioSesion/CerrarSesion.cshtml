@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "CerrarSesion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        Cerrar Sesión
+    </div>
+    <div class="card-body">
+
+
+        <form asp-action="CerrarSesionActiva" asp-controller="InicioSesion" method="post">
+
+            <div class="alert alert-danger" role="alert">
+                ¿De verdad desea cerrar sesión?
+            </div>
+
+            <button type="submit" class="btn btn-danger">Cerrar Sesión</button>
+            <a asp-action="MostrarPerfil" asp-controller="Perfil" class="btn btn-warning">Volver al Perfil</a>  
+        </form>
+    </div>
+</div>
+

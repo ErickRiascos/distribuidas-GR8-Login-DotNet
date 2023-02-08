@@ -36,6 +36,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ElkinVera/Desktop/distribuidas-GR8-Login-DotNet/LOGIN_CRUD_GRUPO8/LOGIN_CRUD_GRUPO8/Views/InicioSesion/CerrarSesion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5pY2lvU2VzaW9uXENlcnJhclNlc2lvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ElkinVera/Desktop/distribuidas-GR8-Login-DotNet/LOGIN_CRUD_GRUPO8/LOGIN_CRUD_GRUPO8/Views/InicioSesion/IniciarSesion.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5pY2lvU2VzaW9uXEluaWNpYXJTZXNpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,12 +48,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW5pY2lvU2VzaW9uXFJlZ2lzdHJhclVzdWFyaW8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ElkinVera/Desktop/distribuidas-GR8-Login-DotNet/LOGIN_CRUD_GRUPO8/LOGIN_CRUD_GRUPO8/Views/Perfil/MostrarPerfil.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZmlsXE1vc3RyYXJQZXJmaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ElkinVera/Desktop/distribuidas-GR8-Login-DotNet/LOGIN_CRUD_GRUPO8/LOGIN_CRUD_GRUPO8/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ElkinVera/Desktop/distribuidas-GR8-Login-DotNet/LOGIN_CRUD_GRUPO8/LOGIN_CRUD_GRUPO8/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ElkinVera/Desktop/distribuidas-GR8-Login-DotNet/LOGIN_CRUD_GRUPO8/LOGIN_CRUD_GRUPO8/Views/Usuarios/EditarClaveUsuario.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRWRpdGFyQ2xhdmVVc3VhcmlvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/ElkinVera/Desktop/distribuidas-GR8-Login-DotNet/LOGIN_CRUD_GRUPO8/LOGIN_CRUD_GRUPO8/Views/Usuarios/EditarUsuario.cshtml]

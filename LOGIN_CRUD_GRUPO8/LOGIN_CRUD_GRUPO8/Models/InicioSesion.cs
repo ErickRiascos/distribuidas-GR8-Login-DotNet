@@ -37,13 +37,24 @@ namespace LOGIN_CRUD_GRUPO8.Models
             conexion.Open();
 
             cmd.Connection = conexion;
-            cmd.CommandText = "SELECT * FROM XESUBSE_USUARIO WHERE USUARIO = '" + usuario + "' AND USU_PASWD = '" + password + "'";
+            cmd.CommandText = "SELECT * FROM XESUBSE_USUARIO WHERE USUARIO = '" + usuario + "'";
 
             var dr = cmd.ExecuteReader();
+            string contra = "";
 
             if (dr.HasRows)
             {
-                aux = true;
+
+                while (dr.Read())
+                {
+                    contra = dr["USU_PASWD"].ToString();
+                }
+
+                /***** VERIFICAR CONTRASEÑA CON LA ENCRIPTADA *****/
+
+                aux = BCrypt.Net.BCrypt.Verify(password, contra);
+
+                /**************************************************/
             }
 
             return aux; 

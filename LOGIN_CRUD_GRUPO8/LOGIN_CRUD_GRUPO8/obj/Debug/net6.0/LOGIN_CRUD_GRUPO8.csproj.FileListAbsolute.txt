@@ -566,3 +566,4 @@ C:\Users\ElkinVera\Desktop\distribuidas-GR8-Login-DotNet\LOGIN_CRUD_GRUPO8\LOGIN
 C:\Users\ElkinVera\Desktop\distribuidas-GR8-Login-DotNet\LOGIN_CRUD_GRUPO8\LOGIN_CRUD_GRUPO8\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 C:\Users\ElkinVera\Desktop\distribuidas-GR8-Login-DotNet\LOGIN_CRUD_GRUPO8\LOGIN_CRUD_GRUPO8\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\ElkinVera\Desktop\distribuidas-GR8-Login-DotNet\LOGIN_CRUD_GRUPO8\LOGIN_CRUD_GRUPO8\obj\Debug\net6.0\LOGIN_CRUD_GRUPO8.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\ElkinVera\Desktop\distribuidas-GR8-Login-DotNet\LOGIN_CRUD_GRUPO8\LOGIN_CRUD_GRUPO8\bin\Debug\net6.0\BCrypt.Net-Next.dll
